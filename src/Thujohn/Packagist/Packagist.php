@@ -14,7 +14,7 @@ class Packagist {
 		$options[CURLOPT_URL] = $baseUrl;
 		$options[CURLOPT_RETURNTRANSFER] = true;
 		$options[CURLOPT_SSL_VERIFYPEER] = false;
-		$options[CURLOPT_USERAGENT] = $_SERVER['HTTP_USER_AGENT'];
+		$options[CURLOPT_USERAGENT] = (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : 'Packagist L4';
 
 		$feed = curl_init();
 		curl_setopt_array($feed, $options);
